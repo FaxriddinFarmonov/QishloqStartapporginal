@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">UBold</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
+                                            <li class="breadcrumb-item active">Customers</li>
+                                        </ol>
+                                    </div>
+                                    <h4 class="page-title">Customers</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row mb-2">
+                                            <div class="col-sm-4">
+                                                <a href="javascript:void(0);" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add Customers</a>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div class="text-sm-end">
+                                                    <button type="button" class="btn btn-success mb-2 me-1"><i class="mdi mdi-cog"></i></button>
+                                                    <button type="button" class="btn btn-light mb-2 me-1">Import</button>
+                                                    <button type="button" class="btn btn-light mb-2">Export</button>
+                                                </div>
+                                            </div><!-- end col-->
+                                        </div>
+
+                                        <div class="table-responsive">
+                                            <table class="table table-centered table-striped dt-responsive nowrap w-100" id="products-datatable">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 20px;">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input" id="customCheck1">
+                                                                <label class="form-check-label" for="customCheck1">&nbsp;</label>
+                                                            </div>
+                                                        </th>
+                                                        <th>Customer</th>
+                                                        <th>Phone</th>
+                                                        <th>Balance</th>
+                                                        <th>Create_data</th>
+                                                        <th>Update_data</th>
+                                                        <th>Province</th>
+                                                        <th style="width: 70px;">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                   {% for pump in pumps  %}
+                                                        <tr>
+                                                            <td>
+                                                                <div class="form-check">
+                                                                    <input type="checkbox" class="form-check-input" id="customCheck2">
+                                                                        
+                                            
+                                                                    {% comment %} <label class="form-check-label" for="customCheck2">ABC</label> {% endcomment %}
+                                                                </div>
+                                                            </td>
+                                                            <td class="table-user">
+                                                                <img src="{{ pump.image.url}}" alt="table-user" class="me-2 rounded-circle">
+                                                                <a href="javascript:void(0);" class="text-body fw-semibold">{{ pump.name }}</a>
+                                                            </td>
+                                                            <td>{{ pump.phone }}</td>
+                                                            <td>
+                                                                ${{ pump.budget }}
+                                                            </td>
+                                                            <td>
+                                                            {{ pump.StartDate }} <small class="text-muted"> {{ pump.StartDate.data }}</small>
+                                                            </td>
+                                                            <td>
+                                                               {{ pump.UpdateDate }} <small class="text-muted">{{ pump.UpdateDate.data }}</small>
+                                                            </td>
+                                                            <td>
+                                                                {{ pump.province }}
+                                                            </td>
+
+                                                            <td>
+                                                                <a href="{% url 'pump_edit' pk=pump.pk %}" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
+                                                                <a href="{%url 'pump_delete' pk=pump.pk %}" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                                            </td>
+                                                        </tr>
+
+                                                   
+                                                   {% endfor %}
+                                                   
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+{% endblock main %}
