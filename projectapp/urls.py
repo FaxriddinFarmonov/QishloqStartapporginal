@@ -34,6 +34,7 @@ urlpatterns = [
    
     path('manitoringvil/',manitoringvil,name='manitoringvil'),
     path('manitoringtuman/',manitoringtuman,name='manitoringtuman'),
+    path('report/<int:pk>/',report,name='report'),
 
 
     

@@ -6,6 +6,9 @@ from django.contrib.auth.models import AbstractBaseUser,PermissionsMixin,UserMan
 
 class User(AbstractUser):
     phone = models.CharField(max_length=13)
+    
+    def __str__(self):
+        return self.username
 
 
 
@@ -31,10 +34,10 @@ class Pump(models.Model):
     image = models.ImageField(upload_to='media/',blank=True,null=True)
     province = models.ForeignKey(Province, models.SET_NULL, null=True, blank=True)
     subprovince = models.ForeignKey(SubProvince, models.SET_NULL, null=True, blank=True)
-    umumiy_mal = models.FloatField(blank=True,null=True)
-    oy_mal = models.FloatField(blank=True,null=True)
-    kun_mal = models.FloatField(blank=True,null=True)
-    soat_mal = models.FloatField(blank=True,null=True)
+    umumiy_mal = models.IntegerField(blank=True,null=True)
+    oy_mal = models.IntegerField(blank=True,null=True)
+    kun_mal = models.IntegerField(blank=True,null=True)
+    soat_mal = models.IntegerField(blank=True,null=True)
 
     def __str__(self):
         return self.name

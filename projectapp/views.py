@@ -11,6 +11,7 @@ from django.db.models import Sum
 
 
 def create_pump(request):
+    provinces = Province.objects.all()
     form = PumpForm()
     if request.method == 'POST':
         forms = PumpForm(request.POST,request.FILES)
@@ -32,14 +33,20 @@ def create_pump(request):
         else:
             print(forms.errors)
     ctx = {
-        'form':form
+        'form':form,
+        'pro': provinces
     }
     return render(request,'malumotbir.html',ctx)
 
 
 def index(request):
-   
-    return render(request,'index.html')
+    provinces = Province.objects.all()
+    
+    ctx = {
+        'pro': provinces
+    }
+    
+    return render(request,'index.html', ctx)
 
 
 def semantik(request):
@@ -76,6 +83,8 @@ class GetSubprovince(View):
         
         
 def users(request):
+    provinces = Province.objects.all()
+    
     print(request.GET.get('q'))
     if request.GET.get("q",None): 
         word=request.GET.get('q')   
@@ -83,7 +92,7 @@ def users(request):
     else:
         pumps = Pump.objects.all()
         
-    return render(request,'user.html',{'pumps':pumps})
+    return render(request,'user.html',{'pumps':pumps, 'pro': provinces})
 
 
 def getsubprovince(request,pk):
@@ -209,22 +218,22 @@ def manitoringvil(request):
 
 
 def manitoringtuman(request):
-    if request.method =='POST':
+    if request.method =='GET':
         subp=request.POST.get('subprovince')
-        info = Pump.objects.filter(subprovince__title=subp).annotate(summa=Sum('yil_mal'))
-        yilsumma = 0
+        info = Pump.objects.filter(province__title=subp)
+        umumiysumma = 0
         oysumma = 0
         kunsumma = 0
         soatsumma = 0
         
         for i in info:
-            yilsumma += i.yil_mal
+            umumiysumma += i.umumiy_mal
             oysumma += i.oy_mal
             kunsumma += i.kun_mal
             soatsumma += i.soat_mal
         ctx = {
            'info':info,
-           'yilsumma': yilsumma,
+           'umumiysumma': umumiysumma,
            'oysumma': oysumma,
            'kunsumma': kunsumma,
            'soatsumma': soatsumma
@@ -237,3 +246,14 @@ def manitoringtuman(request):
 
             
     return render(request,'manitoringtuman.html')
+
+
+def report(request, pk):
+    provinces = Province.objects.all()
+    sub = Pump.objects.filter(subprovince__pk=pk)
+    
+    ctx = {
+        'sub':sub,
+        'pro': provinces
+    }
+    return render(request,'pump.html',ctx)

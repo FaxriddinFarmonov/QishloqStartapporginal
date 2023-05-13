@@ -30,10 +30,9 @@ class PumpForm(ModelForm):
         
         
 class UserForm(forms.ModelForm):
-    password2 = forms.CharField(max_length=50)
     class Meta:
         model = User
-        fields = ('username','email','phone','password','password2')
+        fields = ('username','last_name','phone','password')
    
         
     # def save(self, *args, **kwags):

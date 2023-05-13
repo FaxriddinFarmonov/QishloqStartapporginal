@@ -15,10 +15,10 @@
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">UBold</a></li>
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
-                                            <li class="breadcrumb-item active">Customers</li>
+                                            {% comment %} <li class="breadcrumb-item active">Customers</li>/ {% endcomment %}
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Customers</h4>
+                                    {% comment %} <h4 class="page-title">Customers</h4> {% endcomment %}
                                 </div>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                                     <div class="card-body">
                                         <div class="row mb-2">
                                             <div class="col-sm-4">
-                                                <a href="javascript:void(0);" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add Customers</a>
+                                                {% comment %} <a href="javascript:void(0);" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add Customers</a> {% endcomment %}
                                             </div>
                                             <div class="col-sm-8">
                                                 <div class="text-sm-end">
@@ -51,17 +51,19 @@
                                                                 <label class="form-check-label" for="customCheck1">&nbsp;</label>
                                                             </div>
                                                         </th>
-                                                        <th>Customer</th>
-                                                        <th>Phone</th>
-                                                        <th>Balance</th>
-                                                        <th>Create_data</th>
-                                                        <th>Update_data</th>
-                                                        <th>Province</th>
+                                                        <th>Name</th>
+                                                        <th>StartDate</th>
+                                                        <th>yil_mal</th>
+                                                        <th>oy_mal</th>
+                                                        <th>kun_mal</th>
+                                                        <th>soat_mal</th>
+                                                        <th>viloyat</th>
+                                                        <th>tuman</th>
                                                         <th style="width: 70px;">Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                   {% for pump in pumps  %}
+                                                   {% for pump in pumps %}
                                                         <tr>
                                                             <td>
                                                                 <div class="form-check">
@@ -72,25 +74,30 @@
                                                                 </div>
                                                             </td>
                                                             <td class="table-user">
-                                                                <img src="{{ pump.image.url}}" alt="table-user" class="me-2 rounded-circle">
+                                                                <img src="{{ pump.image.url }}" alt="table-user" class="me-2 rounded-circle">
                                                                 <a href="javascript:void(0);" class="text-body fw-semibold">{{ pump.name }}</a>
                                                             </td>
-                                                            <td>{{ pump.phone }}</td>
+                                                            <td>{{ pump.StartDate }}</td>
                                                             <td>
-                                                                ${{ pump.budget }}
+                                                                ${{ pump.umumiy_mal }}
                                                             </td>
                                                             <td>
-                                                            {{ pump.StartDate }} <small class="text-muted"> {{ pump.StartDate.data }}</small>
+                                                            <small class="text-muted"> {{ pump.oy_mal }}</small>
                                                             </td>
                                                             <td>
-                                                               {{ pump.UpdateDate }} <small class="text-muted">{{ pump.UpdateDate.data }}</small>
+                                                              <small class="text-muted">{{ pump.kun_mal }}</small>
                                                             </td>
+                                                            <td>
+                                                             <small class="text-muted">{{ pump.soat_mal }}</small>
+                                                             </td>
                                                             <td>
                                                                 {{ pump.province }}
                                                             </td>
+                                                            <td>
+                                                                {{ pump.subprovince }}
+                                                            </td>
 
                                                             <td>
-                                                                <a href="{% url 'pump_edit' pk=pump.pk %}" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
                                                                 <a href="{%url 'pump_delete' pk=pump.pk %}" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                                             </td>
                                                         </tr>
@@ -101,13 +108,4 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                    </div> <!-- end card-body-->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
-                        </div>
-                        <!-- end row -->
-
-                    </div> <!-- container -->
-
-                </div> <!-- content -->
 {% endblock main %}

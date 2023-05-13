@@ -1,74 +1,42 @@
- {% load static %}
+<!--
+=========================================================
+* Argon Dashboard 2 - v2.0.4
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://www.creative-tim.com/license)
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
- 
+  {% load static %}
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="{%static 'static/auth/assets/img/apple-icon.png ' %}">
-  <link rel="icon" type="image/png" href="{%static 'static/auth/assets/img/favicon.png' %}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static 'static/userl/assets/img/apple-icon.png' %}">
+  <link rel="icon" type="image/png" href="{% static 'static/userl/assets/img/favicon.png' %}">
   <title>
     Argon Dashboard 2 by Creative Tim
   </title>
   <!--     Fonts and icons     -->
-  <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' %}" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
-  <link href="{%static 'static/auth/assets/css/nucleo-icons.css' %}" rel="stylesheet" />
-  <link href="{%static 'static/auth/assets/css/nucleo-svg.css' %}" rel="stylesheet" />
+  <link href="{% static 'static/userl/assets/css/nucleo-icons.css' %}" rel="stylesheet" />
+  <link href="{% static 'static/userl/assets/css/nucleo-svg.css' %}" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="{%static 'static/auth/assets/css/nucleo-svg.css ' %}" rel="stylesheet" />
+  <link href="{% static 'static/userl/assets/css/nucleo-svg.css' %}" rel="stylesheet" />
   <!-- CSS Files -->
-  <link id="pagestyle" href="{%static 'static/auth/assets/css/argon-dashboard.css' %} ?v=2.0.4" rel="stylesheet" />
+  <link id="pagestyle" href="{% static 'static/userl/assets/css/argon-dashboard.css' %}?v=2.0.4" rel="stylesheet" />
 </head>
-
 <body class="">
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent mt-4">
-    <div class="container">
-      <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 text-white" href="../pages/dashboard.html">
-
-      </a>
-      <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon mt-2">
-          <span class="navbar-toggler-bar bar1"></span>
-          <span class="navbar-toggler-bar bar2"></span>
-          <span class="navbar-toggler-bar bar3"></span>
-        </span>
-      </button>
-      <div class="collapse navbar-collapse" id="navigation">
-        <ul class="navbar-nav mx-auto">
-<!--          <li class="nav-item">-->
-<!--            <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="../pages/dashboard.html">-->
-<!--              <i class="fa fa-chart-pie opacity-6  me-1"></i>-->
-
-<!--            </a>-->
-<!--          </li>-->
-<!--          <li class="nav-item">-->
-<!--            <a class="nav-link me-2" href="../pages/profile.html">-->
-<!--              <i class="fa fa-user opacity-6  me-1"></i>-->
-
-<!--            </a>-->
-<!--          </li>-->
-          <li class="nav-item">
-            <a class="nav-link me-2" href="">
-              <i class="fas fa-home "></i>
-              Saytga qaytish
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link me-2" href=" ">
-              <i class="fas fa-key opacity-6  me-1"></i>
-              Sign In
-            </a>
-          </li>
-<!--        </ul>-->
-<!--        <ul class="navbar-nav d-lg-block d-none">-->
-<!--          <li class="nav-item">-->
-<!--            <a href="https://www.creative-tim.com/product/argon-dashboard" class="btn btn-sm mb-0 me-1 bg-gradient-light">Free Download</a>-->
-<!--          </li>-->
-<!--        </ul>-->
-      </div>
-    </div>
-  </nav>
   <!-- End Navbar -->
   <main class="main-content  mt-0">
     <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signup-cover.jpg'); background-position: top;">
@@ -76,8 +44,8 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-5 text-center mx-auto">
-            <h1 class="text-white mb-2 mt-5">Welcome!</h1>
-            <p class="text-lead text-white">Ro'yxatdan o'tish uchun ajoyib kun ;)</p>
+            <h1 class="text-white mb-2 mt-5">Xush Kebsiz!</h1>
+            <p class="text-lead text-white"></p>
           </div>
         </div>
       </div>
@@ -128,42 +96,47 @@
                 </a>
               </div>
               <div class="mt-2 position-relative text-center">
-                <p class="text-sm font-weight-bold mb-2 text-secondary text-border d-inline z-index-2 bg-white px-3">
-                  or
+
+              
+                <p class="text-danger font-weight-bold mb-2 text-secondary text-border d-inline z-index-2 bg-white px-3">
+                
                 </p>
-               
-
-
+              
+                <p class="text-sm font-weight-bold mb-2 text-secondary text-border d-inline z-index-2 bg-white px-3">
+                  yoki
+                </p>
+  
               </div>
             </div>
             <div class="card-body">
               <form role="form" method="post">
-                {% csrf_token %}
+                              {% csrf_token %}
+
                 <div class="mb-3">
-                  <input type="text" required name="username" class="form-control" placeholder="Name" aria-label="Name">
+                  <input type="text" name="username" class="form-control" placeholder="Name" required aria-label="Name">
+                </div>
+               
+                <div class="mb-3">
+                  <input type="text" name="last_name" required class="form-control" placeholder="lastname" aria-label="Email">
                 </div>
                 <div class="mb-3">
-                  <input type="tel" required name="phone" class="form-control" placeholder="+998 ** *** ** ** " aria-label="Name">
+                  <input type="tel" name="phone" required class="form-control" placeholder="+998 ** *** ** **" aria-label="Email">
                 </div>
                 <div class="mb-3">
-                  <input type="text" required name="" class="form-control" placeholder="Username" aria-label="Email">
+                  <input type="password" name="passsword" required class="form-control" placeholder="Password" aria-label="Password">
                 </div>
-                <div class="mb-3">
-                  <input type="password" required name="pass" class="form-control" placeholder="Password" aria-label="Password">
-                </div>
-                 <div class="mb-3">
-                  <input type="password" required name="pas_conf" class="form-control" placeholder="Parolni tasdiqlang" aria-label="Password">
-                </div>
+                
                 <div class="form-check form-check-info text-start">
-                  <input class="form-check-input" type="checkbox" name="oferta" value="" id="flexCheckDefault" checked>
+                  <input class="form-check-input" type="checkbox" value="" name="oferta" id="flexCheckDefault" checked>
                   <label class="form-check-label" for="flexCheckDefault">
-                    I agree the <a href="javascript:;" class="text-dark font-weight-bolder">Terms and Conditions</a>
+                   <a href="javascript:;" class="text-dark font-weight-bolder">Oferta</a> Shartlariga ro'ziman
                   </label>
                 </div>
                 <div class="text-center">
                   <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Ro'yxatdan o'tish</button>
                 </div>
-                <p class="text-sm mt-3 mb-0">Accountung bormi ? unda <a href="" class="text-dark font-weight-bolder">Kiring</a></p>
+                <p class="text-sm mt-3 mb-0">Allaqachon Acc bormi? Unda <i class="fa fa-hand-o-right"></i>
+                  <a href="" class="text-dark font-weight-bolder">Kiring</a></p>
               </form>
             </div>
           </div>
@@ -226,10 +199,10 @@
   </footer>
   <!-- -------- END FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
   <!--   Core JS Files   -->
-  <script src="{%static 'static/auth/assets/js/core/popper.min.js' %}"></script>
-  <script src="{%static 'static/auth/assets/js/core/bootstrap.min.js' %}"></script>
-  <script src="{%static 'static/auth/assets/js/plugins/perfect-scrollbar.min.js' %}"></script>
-  <script src="{%static 'static/auth/assets/js/plugins/smooth-scrollbar.min.js' %}"></script>
+  <script src="{% static 'static/userl/assets/js/core/popper.min.js' %}"></script>
+  <script src="{% static 'static/userl/assets/js/core/bootstrap.min.js' %}"></script>
+  <script src="{% static 'static/userl/assets/js/plugins/perfect-scrollbar.min.js' %}"></script>
+  <script src="{% static 'static/userl/assets/js/plugins/smooth-scrollbar.min.js' %}"></script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -242,8 +215,7 @@
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{%static 'static/auth/assets/js/argon-dashboard.min.js ' %}?v=2.0.4"></script>
+  <script src="{% static 'static/userl/assets/js/argon-dashboard.min.js' %}?v=2.0.4"></script>
 </body>
-
 
 </html>
